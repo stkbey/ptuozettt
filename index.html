@@ -3,234 +3,288 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Proje Hazırlama Sınav Notları (Güncel)</title>
-    <!-- Tailwind CSS CDN'i -->
+    <title>Proje Tasarımı | Sınav Notları</title>
+    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    
     <style>
-        /* Okunabilirlik için özel font (Inter) ve kaydırma çubuğu stilini ekleyelim */
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
-        
+        /* Ana fontu Inter olarak ayarla */
         body {
             font-family: 'Inter', sans-serif;
-            /* Firefox için daha yumuşak kaydırma */
-            scrollbar-color: #2d3748 #1a202c;
-            scrollbar-width: thin;
+            background-color: #111827; /* Koyu Gri-Mavi Arka Plan */
+            color: #e0e0e0;
         }
 
-        /* Webkit (Chrome, Safari, Edge) için kaydırma çubuğu */
-        ::-webkit-scrollbar {
-            width: 8px;
+        /* Başlıklar için özel gradient */
+        .text-gradient {
+            background: linear-gradient(to right, #60a5fa, #34d399); /* Mavi -> Yeşil */
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
-        ::-webkit-scrollbar-track {
-            background: #1a202c; /* Karanlık mod arka plan */
-        }
-        ::-webkit-scrollbar-thumb {
-            background-color: #4a5568; /* Kaydırma çubuğu rengi */
-            border-radius: 20px;
-            border: 2px solid #1a202c; /* Arka planla uyumlu kenarlık */
+        
+        /* Akordiyon içerik paneli (başlangıçta gizli) */
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease-out; /* Yumuşak açılma efekti */
         }
 
-        /* Bilgilendirme notları için özel stil */
-        .info-note {
-            background-color: #223c50; /* Mavi-gri arka plan */
-            border-left: 4px solid #38bdf8; /* Vurgu çizgisi */
-            padding: 12px 16px;
-            border-radius: 8px;
-            margin-top: 16px;
-            color: #cbd5e1;
-            font-size: 0.9em;
+        /* Akordiyon başlığı için ikon */
+        .accordion-button svg {
+            transition: transform 0.3s ease;
+        }
+
+        /* Aktif (açık) durum için ikonun dönmesi */
+        .accordion-button.active svg {
+            transform: rotate(180deg);
         }
     </style>
 </head>
-<body class="bg-gray-900 text-gray-200 antialiased">
+<body class="antialiased">
 
-    <!-- Ana İçerik Konteyneri -->
-    <div class="container mx-auto max-w-4xl p-4 md:p-8">
+    <!-- Ana Konteyner -->
+    <div class="container mx-auto max-w-3xl p-6 md:p-12 min-h-screen">
 
         <!-- Başlık -->
-        <header class="mb-10 text-center">
-            <h1 class="text-4xl md:text-5xl font-bold text-cyan-400">
-                Proje Hazırlama Sınav Notları
+        <header class="text-center mb-10">
+            <h1 class="text-4xl md:text-5xl font-extrabold text-gradient mb-3">
+                Proje Tasarımı Sınav Notları
             </h1>
-            <p class="text-lg text-gray-400 mt-2">Sınav soruları ve cevapları (03161450_PROJE_HAZIRLAMA.pdf kitabına göredir)</p>
+            <p class="text-lg text-gray-400">
+                (Yeni PDF, Sayfa 1-37 arası)
+            </p>
         </header>
 
-        <!-- Soru-Cevap Kartları -->
-        <main class="space-y-8">
+        <!-- Akordiyon (Sorular ve Cevaplar) -->
+        <div class="space-y-4" id="accordion-container">
 
-            <!-- Soru 1: Bilimsel Bilgi Nedir? -->
-            <section class="bg-gray-800 rounded-xl shadow-2xl overflow-hidden">
-                <h2 class="bg-gray-700 p-4 md:p-5 text-xl md:text-2xl font-bold text-white">
-                    1. Bilimsel Bilgi Nedir?
-                </h2>
-                <div class="p-5 md:p-6 text-gray-300 leading-relaxed">
-                    <p>
-                        Kitabın 14. sayfasına göre "Belli yöntemlere ve araştırmalara dayanarak üretilen, akıl yürütme yoluyla varlıklar hakkında elde edilen, sistematik olarak ilerleyen bilgidir."
-                    </p>
-                    <p class="mt-3">
-                        Yine 16. sayfadaki tanıma göre, <strong>objektif (nesnel), sistemli, tutarlı, akla dayalı, eleştiriye açık, sınanabilir ve evrensel</strong> olan bilgi türüdür.
-                    </p>
-                </div>
-            </section>
-
-            <!-- Soru 2: Bilimsel Araştırma Aşamaları (Süreci) Nelerdir? -->
-            <section class="bg-gray-800 rounded-xl shadow-2xl overflow-hidden">
-                <h2 class="bg-gray-700 p-4 md:p-5 text-xl md:text-2xl font-bold text-white">
-                    2. Bilimsel Araştırma Aşamaları (Süreci) Nelerdir?
-                </h2>
-                <div class="p-5 md:p-6 text-gray-300 leading-relaxed">
-                    <p class="mb-4">Bu PDF'te bu süreç <strong>"Proje Hazırlama Basamakları"</strong> olarak (Ünite 2, Sayfa 40) detaylandırılmıştır:</p>
-                    
-                    <ol class="list-decimal list-outside space-y-3 pl-5">
-                        <li><strong>Problem Belirleme (Sayfa 42):</strong> Güncel, orijinal, ilgi çekici ve çözülebilir bir problem (sorun) seçilir.</li>
-                        <li><strong>Denence (Hipotez) ve Sorular (Sayfa 47):</strong> Probleme yönelik test edilebilir, basit ve açık bir önerme (çözüm tahmini) oluşturulur.</li>
-                        <li><strong>Planlama (Sayfa 50):</strong> Projenin ne kadar sürede, hangi yöntem (deney, anket vb.), hangi materyal ve hangi maliyetle yapılacağı planlanır.</li>
-                        <li><strong>Denencelerin Sınanması (Sayfa 53):</strong> Planlanan deney veya araştırma uygulanarak hipotezin doğru olup olmadığı test edilir.</li>
-                        <li><strong>Denence Sonuçlarının Değerlendirilmesi (Sayfa 56):</strong> Testten elde edilen veriler (bulgular) toplanır, tablo ve grafiklerle analiz edilir.</li>
-                        <li><strong>Projenin Yazılması (Raporlama) (Ünite 3):</strong> Tüm bu süreç (amaç, yöntem, bulgular, sonuç) belirli kurallara göre rapor haline getirilir.</li>
-                        <li><strong>Projenin Sunulması (Ünite 4):</strong> Hazırlanan rapor ve proje, afiş, broşür veya bilgisayar sunusu ile başkalarına (jüri, sınıf vb.) aktarılır.</li>
-                    </ol>
-                </div>
-            </section>
-
-            <!-- Soru 3: Bilimin Özellikleri -->
-            <section class="bg-gray-800 rounded-xl shadow-2xl overflow-hidden">
-                <h2 class="bg-gray-700 p-4 md:p-5 text-xl md:text-2xl font-bold text-white">
-                    3. Bilimin Özellikleri Nelerdir? (Olumlu / Olumsuz)
-                </h2>
-                <div class="p-5 md:p-6 text-gray-300 leading-relaxed grid md:grid-cols-2 gap-6">
-                    
-                    <!-- Olumlu Özellikler (Bilim) -->
-                    <div>
-                        <h3 class="text-lg font-semibold text-green-400 mb-2">Olumlu (Bilimin Özellikleri)</h3>
-                        <p class="mb-3 text-sm text-gray-400">(Sayfa 16-17 ve 36'ya göre)</p>
-                        <ul class="list-disc list-outside space-y-2 pl-5">
-                            <li><strong>Objektif (Nesneldir):</strong> Kişisel görüşlere değil, gerçeklere dayanır.</li>
-                            <li><strong>Sistemlidir:</strong> Belli bir yöntemi (araştırma süreci) vardır.</li>
-                            <li><strong>Tutarlıdır:</strong> Kendi içinde çelişmez.</li>
-                            <li><strong>Sınanabilirdir:</strong> Deney ve gözleme dayanır.</li>
-                            <li><strong>Evrenseldir:</strong> Sonuçları her yerde geçerlidir.</li>
-                            <li><strong>Genellenebilirdir:</strong> Tek bir olaydan genel bir kurala varır.</li>
-                            <li><strong>Birikimli olarak ilerler.</strong></li>
-                        </ul>
-                    </div>
-
-                    <!-- Olumsuz Özellikler (Sahte Bilim) -->
-                    <div>
-                        <h3 class="text-lg font-semibold text-red-400 mb-2">Olumsuz (Bilimin Potansiyel Zararları)</h3>
-                        <ul class="list-disc list-outside space-y-2 pl-5">
-                            <li><strong>Yanlış Kullanımı Zararlı Olabilir:</strong> Nükleer silahlar, biyolojik silahlar veya çevreyi kirleten teknolojiler gibi kötü amaçlarla kullanılabilir.</li>
-                            <li><strong>Etik Sorunlar Yaratabilir:</strong> Genetik mühendislik, klonlama gibi alanlarda insanlık ve doğa açısından tartışmalı sonuçlar doğurabilir.</li>
-                            <li><strong>Toplumsal Eşitsizliği Artırabilir:</strong> Teknolojiye erişim sınırlıysa, gelişmiş ülkeler ile az gelişmiş ülkeler arasındaki fark büyüyebilir.</li>
-                            <li><strong>Doğal Dengeleri Bozabilir:</strong> Endüstri ve teknoloji çevreye zarar verebilir, ekosistemleri bozabilir.</li>
+            <!-- Soru 1 -->
+            <div class="bg-gray-800 rounded-xl overflow-hidden shadow-lg">
+                <button class="accordion-button w-full flex justify-between items-center text-left p-5 md:p-6 focus:outline-none">
+                    <span class="text-lg md:text-xl font-bold text-white">1. Bilimsel Bilgi Nedir?</span>
+                    <svg class="w-6 h-6 text-blue-300 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </button>
+                <div class="accordion-content">
+                    <div class="p-6 pt-0 text-gray-300 space-y-3">
+                        <p>Bilimsel bilgi, sadece "bilmek" değil, <strong class="text-yellow-300">yöntemli</strong> bir şekilde elde edilen bilgidir.</p>
+                        <p>(PDF, Sayfa 18'e göre): Evrenin bir bölümünü konu olarak seçen, <strong class="text-yellow-300">deneye, hipoteze ve kurama</strong> dayanan yöntemlerle elde edilen, düzenli ve sistemli bilgi sistemidir.</p>
+                        <p class="font-semibold text-white">Akılda kalıcı farkı:</p>
+                        <ul class="list-disc list-outside pl-6 space-y-2">
+                            <li><strong class="text-white">Kesin ve Değişmez Değildir!</strong> En önemli özelliği budur. Yeni kanıtlar bulundukça <strong class="text-green-400">değişime ve gelişime açıktır.</strong> (Sayfa 19)</li>
+                            <li>Güvenilirdir çünkü kanıtlara dayanır, ancak "son söz" değildir.</li>
                         </ul>
                     </div>
                 </div>
-            </section>
+            </div>
 
-            <!-- Soru 4: Bilimin Amacı ve Değeri -->
-            <section class="bg-gray-800 rounded-xl shadow-2xl overflow-hidden">
-                <h2 class="bg-gray-700 p-4 md:p-5 text-xl md:text-2xl font-bold text-white">
-                    4. Bilimin Amacı ve Değeri (Önemi) Nedir?
-                </h2>
-                <div class="p-5 md:p-6 text-gray-300 leading-relaxed">
-                    
-                    <h3 class="text-xl font-semibold text-cyan-300 mb-3">Bilimin Amacı</h3>
-                    <p class="mb-4">Bu PDF'e göre (Sayfa 19 ve 33) bilimin temel amacı şudur:</p>
-                    <ul class="list-disc list-outside space-y-2 pl-5">
-                        <li><strong>Gerçeğe ulaşmak:</strong> "Gerçeğe ulaşmanın en etkili, en objektif, en güçlü yolunu keşfetmiştir." (Sayfa 19)</li>
-                        <li><strong>Problem çözmek:</strong> Günlük hayattaki veya bilimsel bir soruna çözüm bulmak.</li>
-                        <li><strong>Hayatı kolaylaştırmak:</strong> Teknoloji üreterek yaşantıyı kolaylaştırmak.</li>
-                        <li><strong>Merak duygusunu gidermek:</strong> "İnsan her zaman gerçeğe ulaşmayı amaçlamıştır. Gerçeğe ulaşma isteği onun merak duygusundan kaynaklanır..." (Sayfa 19)</li>
-                        <li><strong>Topluma fayda sağlamak.</strong> (Sayfa 33, Q1)</li>
-                    </ul>
-
-                    <h3 class="text-xl font-semibold text-cyan-300 mt-6 mb-3">Bilimin Değeri (Hayatımızdaki Yeri ve Önemi)</h3>
-                    <p class="mb-4">(Sayfa 19) Bilimin en büyük değeri, hayatımızı kolaylaştıran <strong>teknolojiyi</strong> ortaya çıkarmasıdır. Temel bilimlerdeki ilerlemeler, teknolojik ilerlemeleri de beraberinde getirir. Bilim ve Teknoloji birbirini tamamlar ve geliştirir.</p>
-                </div>
-            </section>
-
-            <!-- Soru 5: Bilim ve Mühendislik Farkı -->
-            <section class="bg-gray-800 rounded-xl shadow-2xl overflow-hidden">
-                <h2 class="bg-gray-700 p-4 md:p-5 text-xl md:text-2xl font-bold text-white">
-                    5. Bilim ile Mühendislik Arasındaki Fark Nedir?
-                </h2>
-                <div class="p-5 md:p-6 text-gray-300 leading-relaxed">
-                    
-                    <div class="info-note">
-                        <strong>Not:</strong> Bu "Proje Hazırlama" PDF'i, 'Mühendislik' kavramını tanımlamıyor. Ancak, Sayfa 14'te 'Bilgi Çeşitleri' arasında 'Bilimsel Bilgi' ve 'Teknik Bilgi' ayrımını yapıyor. Bu ayrım, bilim ve mühendislik farkını mükemmel bir şekilde karşılar.
-                    </div>
-
-                    <p class="mt-6 mb-4">Bu kitaba göre (Sayfa 14) temel fark şudur:</p>
-                    
-                    <div class="overflow-x-auto">
-                        <table class="w-full min-w-max text-left border border-gray-700">
-                            <thead class="bg-gray-700 text-gray-100">
-                                <tr>
-                                    <th class="p-3 border-r border-gray-600">Bilgi Türü</th>
-                                    <th class="p-3">Tanımı (Sayfa 14)</th>
-                                </tr>
-                            </thead>
-                            <tbody class="divide-y divide-gray-700">
-                                <tr class="hover:bg-gray-700/50">
-                                    <td class="p-3 font-semibold border-r border-gray-600">Bilimsel Bilgi (Bilim)</td>
-                                    <td class="p-3">Belli yöntemlere ve araştırmalara dayanarak üretilen, <strong>akıl yürütme yoluyla</strong> varlıklar hakkında elde edilen, sistematik olarak ilerleyen bilgidir. (Daha çok "Neden?" sorusuna odaklanır)</td>
-                                </tr>
-                                <tr class="hover:bg-gray-700/50">
-                                    <td class="p-3 font-semibold border-r border-gray-600">Teknik Bilgi (Mühendislik)</td>
-                                    <td class="p-3">İnsanın temel ihtiyaçlarını karşılamaya ve günlük yaşamını kolaylaştırmaya yönelik <strong>araç gereç yapımı ile ilgili</strong> bilgidir. (Daha çok "Nasıl?" sorusuna odaklanır)</td>
-                                </tr>
-                            </tbody>
-                        </table>
+            <!-- Soru 2 -->
+            <div class="bg-gray-800 rounded-xl overflow-hidden shadow-lg">
+                <button class="accordion-button w-full flex justify-between items-center text-left p-5 md:p-6 focus:outline-none">
+                    <span class="text-lg md:text-xl font-bold text-white">2. Bilimsel Araştırma Aşamaları Nelerdir?</span>
+                    <svg class="w-6 h-6 text-blue-300 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </button>
+                <div class="accordion-content">
+                    <div class="p-6 pt-0 text-gray-300 space-y-3">
+                        <p>Bilimsel bilgi üretmek için izlenen sistematik yol haritasıdır. (PDF, Sayfa 27, Şema 1.2'ye göre) bu adımlar şunlardır:</p>
+                        <ul class="list-decimal list-outside pl-6 space-y-2 mt-3">
+                            <li class="font-semibold"><strong class="text-white">Araştırma Probleminin Belirlenmesi:</strong> Çözülecek sorun nedir? (Merak etme)</li>
+                            <li class="font-semibold"><strong class="text-white">Literatür Taraması:</strong> Bu konuda daha önce kim, ne yapmış? (Kopya çekme, ilham al!)</li>
+                            <li class="font-semibold"><strong class="text-white">Kaynakların Okunması ve Özetlenmesi:</strong> İlgili bilgileri toplama.</li>
+                            <li class="font-semibold"><strong class="text-white">Araştırma ve Analiz Yöntemlerinin Belirlenmesi:</strong> Sorunu nasıl çözeceksin? (Deney mi, anket mi?)</li>
+                            <li class="font-semibold"><strong class="text-white">Veri Toplanması ve Analizi:</strong> Deneyi yap, verileri topla ve "Bu sayılar ne anlama geliyor?" diye analiz et.</li>
+                            <li class="font-semibold"><strong class="text-white">Bulguların Yorumlanması:</strong> "Demek ki..." diye başlayan o aydınlanma anı.</li>
+                            <li class="font-semibold"><strong class="text-white">Araştırma Sürecinin ve Bulgularının Rapor Edilmesi:</strong> Bulduklarını bilim dünyasıyla paylaşmak (Makale yazmak).</li>
+                        </ul>
                     </div>
                 </div>
-            </section>
+            </div>
 
-            <!-- Soru 6: Mühendislik Tasarım Döngüsü -->
-            <section class="bg-gray-800 rounded-xl shadow-2xl overflow-hidden">
-                <h2 class="bg-gray-700 p-4 md:p-5 text-xl md:text-2xl font-bold text-white">
-                    6. Mühendislik Tasarım Döngüsü Nedir?
-                </h2>
-                <div class="p-5 md:p-6 text-gray-300 leading-relaxed">
-                    
-                    <div class="info-note">
-                        <strong>Not:</strong> Bu PDF, "Mühendislik Tasarım Döngüsü" kavramını içermiyor. Bu kitabın ana konusu olan <strong>"Proje Hazırlama Basamakları" (Ünite 2)</strong>, bir araştırma veya tasarım projesinin nasıl yürütüleceğini anlatan eşdeğer süreçtir.
+            <!-- Soru 3 -->
+            <div class="bg-gray-800 rounded-xl overflow-hidden shadow-lg">
+                <button class="accordion-button w-full flex justify-between items-center text-left p-5 md:p-6 focus:outline-none">
+                    <span class="text-lg md:text-xl font-bold text-white">3. Bilimin Özellikleri Nelerdir?</span>
+                    <svg class="w-6 h-6 text-blue-300 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </button>
+                <div class="accordion-content">
+                    <div class="p-6 pt-0 text-gray-300 space-y-3">
+                        <p>(PDF, Sayfa 18'e göre) Bilimin temel özellikleri şunlardır:</p>
+                        <ul class="list-disc list-outside pl-6 space-y-2 mt-3">
+                            <li><strong class="text-white">Gerçeği İfade Eder:</strong> Olgulara, yani gerçeklere dayanır.</li>
+                            <li><strong class="text-white">Mantıksaldır:</strong> Kendi içinde tutarlıdır.</li>
+                            <li><strong class="text-white">Nesneldir (Objektiftir):</strong> Yapan kişinin görüşüne, inancına göre değişmez. "Bana göre yer çekimi yok" diyemezsin.</li>
+                            <li><strong class="text-white">Genelleyicidir:</strong> Türkiye'de F=m.a ise, Japonya'da da öyledir.</li>
+                            <li><strong class="text-white">Değişime ve Gelişime Açıktır:</strong> (En önemli özellik!) Yeni kanıtla kendini günceller.</li>
+                            <li><strong class="text-white">Deneyseldir:</strong> Kanıt gerektirir.</li>
+                            <li><strong class="text-white">Test Edilebilir ve Ölçülebilir:</strong> Sınanabilir olmalıdır.</li>
+                        </ul>
+                        <p class="pt-2"><strong class="text-yellow-300">Peki ya Sahte Bilim (Olumsuz Özellik)?</strong> (Sayfa 16) <br> Bilimin tam tersidir: Test edilemez, komplo teorilerine dayanır, tutarsızdır ve <strong class="text-red-400">sabit fikirlidir</strong>, asla değişmez (Örn: Astroloji, Gematria).</p>
                     </div>
-
-                    <p class="mt-6 mb-4">Bu PDF'e göre bir projenin döngüsü veya süreci (Ünite 2 Basamakları) şöyledir:</p>
-                    <ul class="list-disc list-outside space-y-2 pl-5">
-                        <li><strong>Problem:</strong> Çözülecek sorunu tanımlama.</li>
-                        <li><strong>Denence (Hipotez):</strong> Soruna yönelik bir çözüm/tahmin önerme.</li>
-                        <li><strong>Planlama:</strong> Çözümü test etmek için gereken adımları, malzemeyi ve süreyi planlama.</li>
-                        <li><strong>Sınama (Test Etme):</strong> Planı uygulayarak denenceyi test etme.</li>
-                        <li><strong>Değerlendirme:</strong> Sonuçları analiz etme. (Eğer denence yanlışsa veya sonuç başarısızsa, süreç başa döner ve yeni bir denence/planlama yapılır).</li>
-                    </ul>
                 </div>
-            </section>
+            </div>
 
-            <!-- Soru 7: Modelleme -->
-            <section class="bg-gray-800 rounded-xl shadow-2xl overflow-hidden">
-                <h2 class="bg-gray-700 p-4 md:p-5 text-xl md:text-2xl font-bold text-white">
-                    7. Modelleme Nedir? Bilimsel Modelleme Neden Önemlidir?
-                </h2>
-                <div class="p-5 md:p-6 text-gray-300 leading-relaxed">
-                    <p>
-                        Gönderdiğin bu "Proje Hazırlama" (03161450_PROJE_HAZIRLAMA.pdf) kitabında <strong>"Modelleme"</strong> konusu spesifik olarak işlenmemiştir.
-                    </p>
-                    <p class="mt-3">
-                        Bu kitabın odak noktası, bir bilimsel projenin fikir (problem) aşamasından, hipotez (denence) kurmaya, planlamaya, test etmeye (sınama) ve son olarak rapor yazıp sunmaya kadar olan süreçtir.
-                    </p>
+            <!-- Soru 4 -->
+            <div class="bg-gray-800 rounded-xl overflow-hidden shadow-lg">
+                <button class="accordion-button w-full flex justify-between items-center text-left p-5 md:p-6 focus:outline-none">
+                    <span class="text-lg md:text-xl font-bold text-white">4. Bilimin Amacı ve Değeri Nedir?</span>
+                    <svg class="w-6 h-6 text-blue-300 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </button>
+                <div class="accordion-content">
+                    <div class="p-6 pt-0 text-gray-300 space-y-3">
+                        <p>(PDF, Sayfa 18-19'a göre) Bilimin iki yönü vardır:</p>
+                        <p><strong class="text-green-400 text-lg">1. AMACI (Ne yapmaya çalışır?):</strong> <br> Temel amacı <strong class="text-yellow-300">evreni anlamak ve açıklamaktır.</strong> Bunu 4 adımda yapar:</p>
+                        <ul class="list-decimal list-outside pl-6 space-y-1">
+                            <li><strong>Betimlemek:</strong> "Bu nedir?" (Gerçeği tasvir etmek)</li>
+                            <li><strong>Açıklamak:</strong> "Bu neden oluyor?" (Gerçeği anlaşılır kılmak)</li>
+                            <li><strong>Ön Görmek (Tahmin):</strong> "İleride ne olur?" (İlişkileri tahmin etmek)</li>
+                            <li><strong>Kontrol Etmek:</strong> "Bunu nasıl yönetiriz?" (Olayları kontrol etmek)</li>
+                        </ul>
+                        
+                        <p class="pt-3"><strong class="text-blue-400 text-lg">2. DEĞERİ (Bize ne katar?):</strong></p>
+                        <ul class="list-disc list-outside pl-6 space-y-1">
+                            <li><strong>Pratik Değeri:</strong> Hayatımızı kolaylaştırması (Örn: Telefon, uçak, aşı).</li>
+                            <li><strong>Entelektüel Değeri:</strong> İnsanın bilme isteğini ve <strong class="text-yellow-300">merakını</strong> tatmin etmesi.</li>
+                            <li><strong>Ahlaki Değeri:</strong> Bize dürüst, objektif ve ön yargısız olmayı öğretmesi.</li>
+                        </ul>
+                    </div>
                 </div>
-            </section>
-        </main>
-        
+            </div>
+
+            <!-- Soru 5 -->
+            <div class="bg-gray-800 rounded-xl overflow-hidden shadow-lg">
+                <button class="accordion-button w-full flex justify-between items-center text-left p-5 md:p-6 focus:outline-none">
+                    <span class="text-lg md:text-xl font-bold text-white">5. Bilim ile Mühendislik Arasındaki Fark Nedir?</span>
+                    <svg class="w-6 h-6 text-blue-300 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </button>
+                <div class="accordion-content">
+                    <div class="p-6 pt-0 text-gray-300 space-y-3">
+                        <p>Bu, sınavın en kilit sorusu olabilir! Akılda kalıcı cevap şudur:</p>
+                        <p class="text-center text-xl font-bold p-4 bg-gray-700 rounded-lg">
+                            <span class="text-green-400">Bilim KEŞFEDER</span>, <span class="text-blue-400">Mühendislik İCAT EDER.</span>
+                        </p>
+                        <p>(PDF, Sayfa 25-26'ya göre) farklar:</p>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+                            <div class="bg-gray-900 p-4 rounded-lg border border-green-500">
+                                <h4 class="text-xl font-bold text-green-400">BİLİM İNSANI (Örn: Pîrî Reis)</h4>
+                                <ul class="list-disc list-outside pl-5 mt-2 space-y-1">
+                                    <li><strong>Amacı:</strong> <strong class="text-yellow-300">Soru sorar</strong>, evreni anlamaya çalışır. ("Neden?")</li>
+                                    <li><strong>Yöntemi:</strong> Bilimsel Yöntem (Hipotez, Deney).</li>
+                                    <li><strong>Çıktısı:</strong> Bilgi, teori, harita, yasa.</li>
+                                    <li><strong>Süreç:</strong> Sorgulama yoluyla çözer.</li>
+                                </ul>
+                            </div>
+                            <div class="bg-gray-900 p-4 rounded-lg border border-blue-500">
+                                <h4 class="text-xl font-bold text-blue-400">MÜHENDİS (Örn: El-Cezerî)</h4>
+                                <ul class="list-disc list-outside pl-5 mt-2 space-y-1">
+                                    <li><strong>Amacı:</strong> <strong class="text-yellow-300">Çözüm üretir</strong>, bir ihtiyacı karşılar. ("Nasıl?")</li>
+                                    <li><strong>Yöntemi:</strong> Mühendislik Tasarım Süreci.</li>
+                                    <li><strong>Çıktısı:</strong> Ürün, makine, kod, robot (Örn: Filli Su Saati).</li>
+                                    <li><strong>Süreç:</strong> Tasarım yoluyla çözer.</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <p class="text-sm text-gray-400 pt-2">(Not: Fotoğraftaki Tesla ve Mendeleyev de bu farkı gösterir. Mendeleyev (bilim) elementleri *keşfetti*, Tesla (mühendislik) alternatif akımı *icat etti*.)</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Soru 6 -->
+            <div class="bg-gray-800 rounded-xl overflow-hidden shadow-lg">
+                <button class="accordion-button w-full flex justify-between items-center text-left p-5 md:p-6 focus:outline-none">
+                    <span class="text-lg md:text-xl font-bold text-white">6. Mühendislik Tasarım Süreci / Döngüsü Modelleri Nelerdir?</span>
+                    <svg class="w-6 h-6 text-blue-300 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </button>
+                <div class="accordion-content">
+                    <div class="p-6 pt-0 text-gray-300 space-y-3">
+                        <p>Mühendisin bir ürünü icat ederken kullandığı "yemek tarifi"dir. Adı "döngü"dür çünkü son adımda (Geliştirme) tekrar başa dönülür.</p>
+                        <p>(PDF, Sayfa 27-28'de) birden fazla model var, en yaygın olanı (Şema 1.4):</p>
+                        <ol class="list-decimal list-outside pl-6 space-y-2 mt-3 font-semibold">
+                            <li><strong class="text-white">Problemin Belirlenmesi:</strong> Çözülecek ihtiyaç nedir?</li>
+                            <li><strong class="text-white">Olası Çözümlerin Araştırılması:</strong> Beyin fırtınası, araştırma.</li>
+                            <li><strong class="text-white">En Uygun Çözümün Seçilmesi:</strong> Hangi fikir en iyisi?</li>
+                            <li><strong class="text-white">Prototipin Yapılması:</strong> Ürünün ilk, basit modeli (maketi) yapılır.</li>
+                            <li><strong class="text-white">Prototipin Test Edilmesi:</strong> Çalışıyor mu? Neresi hatalı?</li>
+                        </ol>
+                        <p class="pt-2">Testten sonra hatalar düzeltilir ve süreç (Geliştirme) yeniden başlar. <strong class="text-yellow-300">NASA Modeli (Şema 1.3)</strong> de benzerdir: Soru Sor -> Hayal Et -> Planla -> Oluştur -> Test Et -> Geliştir.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Soru 7 -->
+            <div class="bg-gray-800 rounded-xl overflow-hidden shadow-lg">
+                <button class="accordion-button w-full flex justify-between items-center text-left p-5 md:p-6 focus:outline-none">
+                    <span class="text-lg md:text-xl font-bold text-white">7. Modelleme Nedir? Bilimsel Modelleme Neden Önemlidir?</span>
+                    <svg class="w-6 h-6 text-blue-300 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </button>
+                <div class="accordion-content">
+                    <div class="p-6 pt-0 text-gray-300 space-y-3">
+                        <p>(PDF, Sayfa 32'ye göre):</p>
+                        <ul class="list-disc list-outside pl-6 space-y-2 mt-3">
+                            <li><strong class="text-white">Model:</strong> Karmaşık bir düşünceyi, olayı veya sistemi daha iyi anlamak için yaptığımız <strong class="text-yellow-300">basitleştirilmiş bir kopyasıdır.</strong> (Örnek: Watson ve Crick'in DNA modeli, bir mimari maket, bir çizim veya bir formül).</li>
+                            <li class="pt-2"><strong class="text-white">Modelleme:</strong> Bir model oluşturma <strong class="text-yellow-300">sürecidir.</strong></li>
+                        </ul>
+                        <p class="font-semibold text-lg pt-2 text-green-400">Neden Önemlidir?</p>
+                        <p>Çünkü gerçek sistemi test etmek çok <strong class="text-red-400">pahalı</strong>, <strong class="text-red-400">tehlikeli</strong> veya <strong class="text-red-400">imkansız</strong> olabilir!</p>
+                        <ul class="list-disc list-outside pl-6 space-y-2">
+                            <li>Bilim insanları atomun yapısı (çok küçük) veya dünyanın iç yapısı (imkansız) gibi karmaşık şeyleri açıklamak için model kullanır.</li>
+                            <li>Mühendisler, bir uçağın gerçeğini yapmadan önce onun modelini (prototipini) yaparak test eder. Bu, <strong class="text-yellow-300">maliyeti düşürür</strong> ve hataları erkenden görmeyi sağlar.</li>
+                            <li><strong class="text-white">Biyomimetik (Sayfa 33):</strong> Doğayı modellemek (örn: yusufçuktan ilhamla uçak kanadı, ayçiçeğinden ilhamla güneş paneli yapmak) mühendislikte sıkça kullanılır.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div> <!-- /Accordion Konteyner -->
+
         <!-- Footer -->
         <footer class="text-center mt-12 text-gray-500">
-            <p>Sınav notları özetidir. Başarılar!</p>
+            <p>Proje Tasarımı ve Uygulamaları (2025) | Sayfa 1-37 Özeti</p>
         </footer>
 
-    </div>
+    </div> <!-- /Ana Konteyner -->
+
+    <script>
+        // Basit Akordiyon JavaScript'i
+        document.addEventListener('DOMContentLoaded', () => {
+            const accordionContainer = document.getElementById('accordion-container');
+
+            accordionContainer.addEventListener('click', function(event) {
+                const button = event.target.closest('.accordion-button');
+                if (!button) return; // Eğer bir butona tıklanmadıysa çık
+
+                const content = button.nextElementSibling;
+                const isActive = button.classList.contains('active');
+
+                // Önce tüm açık olanları kapat (isteğe bağlı, "tek seferde tek açık" için)
+                // Yorum satırını kaldırarak aktif edebilirsiniz
+                // closeAllAccordions(accordionContainer, button);
+
+                if (isActive) {
+                    // Kapat
+                    button.classList.remove('active');
+                    content.style.maxHeight = null;
+                } else {
+                    // Aç
+                    button.classList.add('active');
+                    content.style.maxHeight = content.scrollHeight + 'px';
+                }
+            });
+
+            // (İsteğe bağlı fonksiyon) Diğerlerini kapatır
+            function closeAllAccordions(container, exceptThisButton) {
+                container.querySelectorAll('.accordion-button').forEach(btn => {
+                    if (btn !== exceptThisButton) {
+                        btn.classList.remove('active');
+                        btn.nextElementSibling.style.maxHeight = null;
+                    }
+                });
+            }
+        });
+    </script>
 
 </body>
 </html>
-
