@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Proje Tasarım Sınav Notları</title>
+    <title>Proje Hazırlama Sınav Notları (Güncel)</title>
     <!-- Tailwind CSS CDN'i -->
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
@@ -29,6 +29,17 @@
             border-radius: 20px;
             border: 2px solid #1a202c; /* Arka planla uyumlu kenarlık */
         }
+
+        /* Bilgilendirme notları için özel stil */
+        .info-note {
+            background-color: #223c50; /* Mavi-gri arka plan */
+            border-left: 4px solid #38bdf8; /* Vurgu çizgisi */
+            padding: 12px 16px;
+            border-radius: 8px;
+            margin-top: 16px;
+            color: #cbd5e1;
+            font-size: 0.9em;
+        }
     </style>
 </head>
 <body class="bg-gray-900 text-gray-200 antialiased">
@@ -39,63 +50,46 @@
         <!-- Başlık -->
         <header class="mb-10 text-center">
             <h1 class="text-4xl md:text-5xl font-bold text-cyan-400">
-                Proje Tasarım Sınav Notları
+                Proje Hazırlama Sınav Notları
             </h1>
-            <p class="text-lg text-gray-400 mt-2">Sınav soruları ve cevapları (PDF'ten özetlenmiştir)</p>
+            <p class="text-lg text-gray-400 mt-2">Sınav soruları ve cevapları (03161450_PROJE_HAZIRLAMA.pdf kitabına göredir)</p>
         </header>
 
         <!-- Soru-Cevap Kartları -->
         <main class="space-y-8">
 
-            <!-- Soru 1: Bilimsel Bilgi -->
+            <!-- Soru 1: Bilimsel Bilgi Nedir? -->
             <section class="bg-gray-800 rounded-xl shadow-2xl overflow-hidden">
                 <h2 class="bg-gray-700 p-4 md:p-5 text-xl md:text-2xl font-bold text-white">
                     1. Bilimsel Bilgi Nedir?
                 </h2>
                 <div class="p-5 md:p-6 text-gray-300 leading-relaxed">
                     <p>
-                        Bilimsel bilgi, evrenin veya olayların bir bölümünü konu olarak seçen, <strong>deneye, hipoteze ve kurama dayanan</strong> yöntemler kullanılarak elde edilen düzenli ve sistemli bilgidir.
+                        Kitabın 14. sayfasına göre "Belli yöntemlere ve araştırmalara dayanarak üretilen, akıl yürütme yoluyla varlıklar hakkında elde edilen, sistematik olarak ilerleyen bilgidir."
                     </p>
                     <p class="mt-3">
-                        Temel amacı, test edilebilir sorulara yanıtlar aramak ve güvenilir bilgi oluşturmaktır. Bu bilginin doğasında <strong>deneysellik, mantıksallık ve değişebilirlik</strong> bulunur. Yani, bilimsel bilgi kesin ve değişmez değildir; yeni kanıtlar bulundukça değişebilir ve gelişebilir.
+                        Yine 16. sayfadaki tanıma göre, <strong>objektif (nesnel), sistemli, tutarlı, akla dayalı, eleştiriye açık, sınanabilir ve evrensel</strong> olan bilgi türüdür.
                     </p>
                 </div>
             </section>
 
-            <!-- Soru 2: Bilimsel Araştırma Aşamaları -->
+            <!-- Soru 2: Bilimsel Araştırma Aşamaları (Süreci) Nelerdir? -->
             <section class="bg-gray-800 rounded-xl shadow-2xl overflow-hidden">
                 <h2 class="bg-gray-700 p-4 md:p-5 text-xl md:text-2xl font-bold text-white">
                     2. Bilimsel Araştırma Aşamaları (Süreci) Nelerdir?
                 </h2>
-                <div class="p-5 md:p-6 text-gray-300 leading-relaxed grid md:grid-cols-2 gap-6">
+                <div class="p-5 md:p-6 text-gray-300 leading-relaxed">
+                    <p class="mb-4">Bu PDF'te bu süreç <strong>"Proje Hazırlama Basamakları"</strong> olarak (Ünite 2, Sayfa 40) detaylandırılmıştır:</p>
                     
-                    <!-- Model A -->
-                    <div>
-                        <h3 class="text-lg font-semibold text-cyan-300 mb-2">Model A: Bilimsel Yöntem Adımları</h3>
-                        <ul class="list-disc list-outside space-y-2 pl-5">
-                            <li>Problem tanımlanır veya araştırma sorusu belirlenir.</li>
-                            <li>Araştırma konusu ile ilgili araştırma yapılır.</li>
-                            <li><strong>Hipotez formüle edilir</strong>, değişkenler tanımlanır.</li>
-                            <li><strong>Deney ve gözlemler tasarlanır</strong>, prosedür oluşturulur.</li>
-                            <li>Deney ve gözlemler yapılır, <strong>hipotez test edilir</strong>.</li>
-                            <li>Sonuçlar analiz edilir.</li>
-                            <li>Sonuçlar paylaşılır.</li>
-                        </ul>
-                    </div>
-
-                    <!-- Model B -->
-                    <div>
-                        <h3 class="text-lg font-semibold text-cyan-300 mb-2">Model B: Bilimsel Araştırma Süreci</h3>
-                        <ul class="list-disc list-outside space-y-2 pl-5">
-                            <li>Araştırma Probleminin Belirlenmesi</li>
-                            <li>Literatür Taraması</li>
-                            <li>Kaynakların Okunması ve Özetlenmesi</li>
-                            <li>Araştırma ve Analiz Yöntemlerinin Belirlenmesi</li>
-                            <li>Veri Toplanması ve Analizi</li>
-                            <li>Bulguların Yorumlanması</li>
-                            <li>Bulguların Rapor Edilmesi</li>
-                        </ul>
-                    </div>
+                    <ol class="list-decimal list-outside space-y-3 pl-5">
+                        <li><strong>Problem Belirleme (Sayfa 42):</strong> Güncel, orijinal, ilgi çekici ve çözülebilir bir problem (sorun) seçilir.</li>
+                        <li><strong>Denence (Hipotez) ve Sorular (Sayfa 47):</strong> Probleme yönelik test edilebilir, basit ve açık bir önerme (çözüm tahmini) oluşturulur.</li>
+                        <li><strong>Planlama (Sayfa 50):</strong> Projenin ne kadar sürede, hangi yöntem (deney, anket vb.), hangi materyal ve hangi maliyetle yapılacağı planlanır.</li>
+                        <li><strong>Denencelerin Sınanması (Sayfa 53):</strong> Planlanan deney veya araştırma uygulanarak hipotezin doğru olup olmadığı test edilir.</li>
+                        <li><strong>Denence Sonuçlarının Değerlendirilmesi (Sayfa 56):</strong> Testten elde edilen veriler (bulgular) toplanır, tablo ve grafiklerle analiz edilir.</li>
+                        <li><strong>Projenin Yazılması (Raporlama) (Ünite 3):</strong> Tüm bu süreç (amaç, yöntem, bulgular, sonuç) belirli kurallara göre rapor haline getirilir.</li>
+                        <li><strong>Projenin Sunulması (Ünite 4):</strong> Hazırlanan rapor ve proje, afiş, broşür veya bilgisayar sunusu ile başkalarına (jüri, sınıf vb.) aktarılır.</li>
+                    </ol>
                 </div>
             </section>
 
@@ -109,29 +103,26 @@
                     <!-- Olumlu Özellikler (Bilim) -->
                     <div>
                         <h3 class="text-lg font-semibold text-green-400 mb-2">Olumlu (Bilimin Özellikleri)</h3>
+                        <p class="mb-3 text-sm text-gray-400">(Sayfa 16-17 ve 36'ya göre)</p>
                         <ul class="list-disc list-outside space-y-2 pl-5">
-                            <li>Mantıksaldır.</li>
-                            <li>Nesneldir (Objektiftir).</li>
-                            <li>Deneyseldir (Kanıtlara dayanır).</li>
-                            <li><strong>Değişime ve gelişime açıktır.</strong></li>
-                            <li>Test edilebilir ve ölçülebilir.</li>
-                            <li>Genelleyicidir.</li>
-                            <li>Yaratıcılık ve hayal gücünden beslenir.</li>
-                            <li>Sosyal ve kültürel ortamdan etkilenir.</li>
+                            <li><strong>Objektif (Nesneldir):</strong> Kişisel görüşlere değil, gerçeklere dayanır.</li>
+                            <li><strong>Sistemlidir:</strong> Belli bir yöntemi (araştırma süreci) vardır.</li>
+                            <li><strong>Tutarlıdır:</strong> Kendi içinde çelişmez.</li>
+                            <li><strong>Sınanabilirdir:</strong> Deney ve gözleme dayanır.</li>
+                            <li><strong>Evrenseldir:</strong> Sonuçları her yerde geçerlidir.</li>
+                            <li><strong>Genellenebilirdir:</strong> Tek bir olaydan genel bir kurala varır.</li>
+                            <li><strong>Birikimli olarak ilerler.</strong></li>
                         </ul>
                     </div>
 
                     <!-- Olumsuz Özellikler (Sahte Bilim) -->
                     <div>
-                        <h3 class="text-lg font-semibold text-red-400 mb-2">Olumsuz (Sahte Bilimin Özellikleri)</h3>
+                        <h3 class="text-lg font-semibold text-red-400 mb-2">Olumsuz (Bilimin Potansiyel Zararları)</h3>
                         <ul class="list-disc list-outside space-y-2 pl-5">
-                            <li>Tutarsızdır ve mantıksal değildir.</li>
-                            <li>Subjektiftir (Kişisel görüşlere dayanır).</li>
-                            <li><strong>Test edilebilirlikten uzaktır.</strong></li>
-                            <li>Tahmin ve varsayımlara dayanır.</li>
-                            <li>Komplo teorilerini kanıt olarak sunar.</li>
-                            <li>Çürüten verileri görmezden gelir.</li>
-                            <li>Sabit fikirlidir, değişime kapalıdır.</li>
+                            <li><strong>Yanlış Kullanımı Zararlı Olabilir:</strong> Nükleer silahlar, biyolojik silahlar veya çevreyi kirleten teknolojiler gibi kötü amaçlarla kullanılabilir.</li>
+                            <li><strong>Etik Sorunlar Yaratabilir:</strong> Genetik mühendislik, klonlama gibi alanlarda insanlık ve doğa açısından tartışmalı sonuçlar doğurabilir.</li>
+                            <li><strong>Toplumsal Eşitsizliği Artırabilir:</strong> Teknolojiye erişim sınırlıysa, gelişmiş ülkeler ile az gelişmiş ülkeler arasındaki fark büyüyebilir.</li>
+                            <li><strong>Doğal Dengeleri Bozabilir:</strong> Endüstri ve teknoloji çevreye zarar verebilir, ekosistemleri bozabilir.</li>
                         </ul>
                     </div>
                 </div>
@@ -140,26 +131,22 @@
             <!-- Soru 4: Bilimin Amacı ve Değeri -->
             <section class="bg-gray-800 rounded-xl shadow-2xl overflow-hidden">
                 <h2 class="bg-gray-700 p-4 md:p-5 text-xl md:text-2xl font-bold text-white">
-                    4. Bilimin Amacı ve Değeri Nedir?
+                    4. Bilimin Amacı ve Değeri (Önemi) Nedir?
                 </h2>
                 <div class="p-5 md:p-6 text-gray-300 leading-relaxed">
                     
                     <h3 class="text-xl font-semibold text-cyan-300 mb-3">Bilimin Amacı</h3>
-                    <p class="mb-4">Genel amacı <strong>yeni bilgiler geliştirmektir</strong>. Bu ana amaç dört başlıkta toplanır:</p>
-                    <ul class="list-disc list-outside space-y-2 pl-5 mb-6">
-                        <li><strong>Betimlemek:</strong> Gerçeklerin tasvir edilmesi ve anlatılması.</li>
-                        <li><strong>Açıklamak:</strong> Gerçeğin açıklanması ve anlaşılır şekilde ifade edilmesi.</li>
-                        <li><strong>Ön görmek (Tahmin etmek):</strong> İlişkilerin ve değişimlerin tahmin edilmesi.</li>
-                        <li><strong>Kontrol etmek (Anlamak):</strong> Olayların ve olguların kontrol edilmesi.</li>
+                    <p class="mb-4">Bu PDF'e göre (Sayfa 19 ve 33) bilimin temel amacı şudur:</p>
+                    <ul class="list-disc list-outside space-y-2 pl-5">
+                        <li><strong>Gerçeğe ulaşmak:</strong> "Gerçeğe ulaşmanın en etkili, en objektif, en güçlü yolunu keşfetmiştir." (Sayfa 19)</li>
+                        <li><strong>Problem çözmek:</strong> Günlük hayattaki veya bilimsel bir soruna çözüm bulmak.</li>
+                        <li><strong>Hayatı kolaylaştırmak:</strong> Teknoloji üreterek yaşantıyı kolaylaştırmak.</li>
+                        <li><strong>Merak duygusunu gidermek:</strong> "İnsan her zaman gerçeğe ulaşmayı amaçlamıştır. Gerçeğe ulaşma isteği onun merak duygusundan kaynaklanır..." (Sayfa 19)</li>
+                        <li><strong>Topluma fayda sağlamak.</strong> (Sayfa 33, Q1)</li>
                     </ul>
 
-                    <h3 class="text-xl font-semibold text-cyan-300 mb-3">Bilimin Değeri</h3>
-                    <p class="mb-4">Bilimin değeri üç ana kategoriye ayrılır:</p>
-                    <ul class="list-disc list-outside space-y-2 pl-5">
-                        <li><strong>Pratik Değeri:</strong> Bilimin günlük yaşama kattığı konfor ve faydalardır (Örn: telefon, uçak, aşılar).</li>
-                        <li><strong>Entelektüel Değeri:</strong> İnsanın bilme isteğini ve <strong>merakını tatmin etmesidir</strong>.</li>
-                        <li><strong>Ahlaki Değer:</strong> İnsanlara kazandırdığı dürüstlük, önyargısızlık gibi karakteristik özelliklerdir.</li>
-                    </ul>
+                    <h3 class="text-xl font-semibold text-cyan-300 mt-6 mb-3">Bilimin Değeri (Hayatımızdaki Yeri ve Önemi)</h3>
+                    <p class="mb-4">(Sayfa 19) Bilimin en büyük değeri, hayatımızı kolaylaştıran <strong>teknolojiyi</strong> ortaya çıkarmasıdır. Temel bilimlerdeki ilerlemeler, teknolojik ilerlemeleri de beraberinde getirir. Bilim ve Teknoloji birbirini tamamlar ve geliştirir.</p>
                 </div>
             </section>
 
@@ -169,36 +156,29 @@
                     5. Bilim ile Mühendislik Arasındaki Fark Nedir?
                 </h2>
                 <div class="p-5 md:p-6 text-gray-300 leading-relaxed">
-                    <p class="mb-4">En temel fark, amaçları ve kullandıkları yöntemlerdir. Basitçe: <strong>Bilim keşfeder, mühendislik icat eder.</strong></p>
+                    
+                    <div class="info-note">
+                        <strong>Not:</strong> Bu "Proje Hazırlama" PDF'i, 'Mühendislik' kavramını tanımlamıyor. Ancak, Sayfa 14'te 'Bilgi Çeşitleri' arasında 'Bilimsel Bilgi' ve 'Teknik Bilgi' ayrımını yapıyor. Bu ayrım, bilim ve mühendislik farkını mükemmel bir şekilde karşılar.
+                    </div>
+
+                    <p class="mt-6 mb-4">Bu kitaba göre (Sayfa 14) temel fark şudur:</p>
+                    
                     <div class="overflow-x-auto">
                         <table class="w-full min-w-max text-left border border-gray-700">
                             <thead class="bg-gray-700 text-gray-100">
                                 <tr>
-                                    <th class="p-3 border-r border-gray-600">Kriter</th>
-                                    <th class="p-3 border-r border-gray-600">Bilim (Bilim İnsanı)</th>
-                                    <th class="p-3">Mühendislik (Mühendis)</th>
+                                    <th class="p-3 border-r border-gray-600">Bilgi Türü</th>
+                                    <th class="p-3">Tanımı (Sayfa 14)</th>
                                 </tr>
                             </thead>
                             <tbody class="divide-y divide-gray-700">
                                 <tr class="hover:bg-gray-700/50">
-                                    <td class="p-3 font-semibold border-r border-gray-600">Temel Amaç</td>
-                                    <td class="p-3 border-r border-gray-600"><strong>Soru sorar</strong> ve evreni anlamaya çalışır.</td>
-                                    <td class="p-3"><strong>Çözüm üretir</strong> ve bir ihtiyacı karşılar.</td>
+                                    <td class="p-3 font-semibold border-r border-gray-600">Bilimsel Bilgi (Bilim)</td>
+                                    <td class="p-3">Belli yöntemlere ve araştırmalara dayanarak üretilen, <strong>akıl yürütme yoluyla</strong> varlıklar hakkında elde edilen, sistematik olarak ilerleyen bilgidir. (Daha çok "Neden?" sorusuna odaklanır)</td>
                                 </tr>
                                 <tr class="hover:bg-gray-700/50">
-                                    <td class="p-3 font-semibold border-r border-gray-600">Odak Noktası</td>
-                                    <td class="p-3 border-r border-gray-600"><strong>Sorgulama</strong> yoluyla bir problemi çözer.</td>
-                                    <td class="p-3"><strong>Tasarım</strong> yoluyla bir problemi çözer.</td>
-                                </tr>
-                                <tr class="hover:bg-gray-700/50">
-                                    <td class="p-3 font-semibold border-r border-gray-600">Yöntem</td>
-                                    <td class="p-3 border-r border-gray-600"><strong>Bilimsel Yöntemi</strong> kullanır (Hipotez, Deney).</td>
-                                    <td class="p-3"><strong>Mühendislik Tasarım Sürecini</strong> kullanır (Prototip, Test).</td>
-                                </tr>
-                                <tr class="hover:bg-gray-700/50">
-                                    <td class="p-3 font-semibold border-r border-gray-600">Çıktı</td>
-                                    <td class="p-3 border-r border-gray-600">Açıklamalar, teoriler, bilgiler üretir.</td>
-                                    <td class="p-3">Ürün (makine, kod, yapı) veya süreç icat eder.</td>
+                                    <td class="p-3 font-semibold border-r border-gray-600">Teknik Bilgi (Mühendislik)</td>
+                                    <td class="p-3">İnsanın temel ihtiyaçlarını karşılamaya ve günlük yaşamını kolaylaştırmaya yönelik <strong>araç gereç yapımı ile ilgili</strong> bilgidir. (Daha çok "Nasıl?" sorusuna odaklanır)</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -209,90 +189,39 @@
             <!-- Soru 6: Mühendislik Tasarım Döngüsü -->
             <section class="bg-gray-800 rounded-xl shadow-2xl overflow-hidden">
                 <h2 class="bg-gray-700 p-4 md:p-5 text-xl md:text-2xl font-bold text-white">
-                    6. Mühendislik Tasarım Süreci / Döngüsü Modelleri Nelerdir?
+                    6. Mühendislik Tasarım Döngüsü Nedir?
                 </h2>
-                <div class="p-5 md:p-6 text-gray-300 leading-relaxed space-y-6">
+                <div class="p-5 md:p-6 text-gray-300 leading-relaxed">
                     
-                    <div>
-                        <h3 class="text-lg font-semibold text-cyan-300 mb-2">Model 1: Genel Tasarım Süreci (PDF Tablo 1.1)</h3>
-                        <ol class="list-decimal list-outside space-y-2 pl-5">
-                            <li>Problem tanımlanır.</li>
-                            <li>Problem ile ilgili araştırma yapılır.</li>
-                            <li>Gereksinimler belirlenir (ürün ne yapmalı?).</li>
-                            <li>Beyin fırtınası yapılır, en iyi çözüm seçilir.</li>
-                            <li>Bir <strong>prototip</strong> (ilk model) oluşturulur.</li>
-                            <li>Prototip <strong>test edilir</strong> ve gerekirse yeniden tasarlanır.</li>
-                            <li>Sonuçlar paylaşılır.</li>
-                        </ol>
+                    <div class="info-note">
+                        <strong>Not:</strong> Bu PDF, "Mühendislik Tasarım Döngüsü" kavramını içermiyor. Bu kitabın ana konusu olan <strong>"Proje Hazırlama Basamakları" (Ünite 2)</strong>, bir araştırma veya tasarım projesinin nasıl yürütüleceğini anlatan eşdeğer süreçtir.
                     </div>
 
-                    <div>
-                        <h3 class="text-lg font-semibold text-cyan-300 mb-2">Model 2: NASA Mühendislik Tasarım Döngüsü (PDF Şema 1.3)</h3>
-                        <p>Sürekli devam eden bir döngüdür:</p>
-                        <ul class="list-disc list-outside space-y-2 pl-5 mt-2">
-                            <li>Soru Sorma -> Hayal Etme -> Planlama -> Oluşturma -> Test Etme -> Geliştirme -> (Başa Döner)</li>
-                        </ul>
-                    </div>
-
-                    <div>
-                        <h3 class="text-lg font-semibold text-cyan-300 mb-2">Model 3: 5 Aşamalı Tasarım Süreci (PDF Şema 1.4)</h3>
-                        <ol class="list-decimal list-outside space-y-2 pl-5">
-                            <li>Problemin Belirlenmesi</li>
-                            <li>Olası Çözümlerin Araştırılması</li>
-                            <li>En Uygun Çözümün Seçilmesi</li>
-                            <li>Prototipin Yapılması</li>
-                            <li>Prototipin Test Edilmesi</li>
-                        </ol>
-                    </div>
+                    <p class="mt-6 mb-4">Bu PDF'e göre bir projenin döngüsü veya süreci (Ünite 2 Basamakları) şöyledir:</p>
+                    <ul class="list-disc list-outside space-y-2 pl-5">
+                        <li><strong>Problem:</strong> Çözülecek sorunu tanımlama.</li>
+                        <li><strong>Denence (Hipotez):</strong> Soruna yönelik bir çözüm/tahmin önerme.</li>
+                        <li><strong>Planlama:</strong> Çözümü test etmek için gereken adımları, malzemeyi ve süreyi planlama.</li>
+                        <li><strong>Sınama (Test Etme):</strong> Planı uygulayarak denenceyi test etme.</li>
+                        <li><strong>Değerlendirme:</strong> Sonuçları analiz etme. (Eğer denence yanlışsa veya sonuç başarısızsa, süreç başa döner ve yeni bir denence/planlama yapılır).</li>
+                    </ul>
                 </div>
             </section>
 
             <!-- Soru 7: Modelleme -->
             <section class="bg-gray-800 rounded-xl shadow-2xl overflow-hidden">
                 <h2 class="bg-gray-700 p-4 md:p-5 text-xl md:text-2xl font-bold text-white">
-                    7. Modelleme Nedir? Bilimsel Modelleme Nedir ve Neden Önemlidir?
-                </h2>
-                <div class="p-5 md:p-6 text-gray-300 leading-relaxed space-y-4">
-                    
-                    <div>
-                        <h3 class="text-lg font-semibold text-cyan-300 mb-2">Modelleme Nedir?</h3>
-                        <p>Modelleme; gerçek dünyadaki karmaşık bir sistemi, olayı veya süreci daha basit ve anlaşılır bir şekilde <strong>temsil etme</strong> eylemidir. Bu temsil; fiziksel bir nesne (bir DNA maketi gibi), bir dizi matematiksel denklem (hava durumu tahmini gibi) veya bir bilgisayar simülasyonu olabilir.</p>
-                    </div>
-
-                    <div>
-                        <h3 class="text-lg font-semibold text-cyan-300 mb-2">Bilimsel Modelleme Nedir?</h3>
-                        <p>Bilimsel modelleme, bilim insanlarının, bir olgunun nasıl çalıştığına dair teorilerini ve hipotezlerini temsil etmek ve test etmek için kullandıkları kavramsal, matematiksel veya fiziksel temsillerdir.</p>
-                    </div>
-
-                    <div>
-                        <h3 class="text-lg font-semibold text-cyan-300 mb-2">Bilimsel Modelleme Neden Önemlidir?</h3>
-                        <ul class="list-disc list-outside space-y-2 pl-5">
-                            <li><strong>Anlamayı Sağlar:</strong> Çok karmaşık (iklim sistemi), çok küçük (atomun yapısı) veya çok büyük (galaksiler) sistemleri basitleştirir.</li>
-                            <li><strong>Tahmin Yürütmeyi Sağlar:</strong> Modeller sayesinde, "Eğer bu değişkeni değiştirirsek ne olur?" sorusu test edilebilir.</li>
-                            <li><strong>Görselleştirme Sağlar:</strong> Doğrudan gözlemlenmesi imkansız olan şeyleri (kara delik, Dünya'nın manyetik alanı) incelememizi sağlar.</li>
-                            <li><strong>Hipotezleri Test Eder:</strong> Pahalı veya tehlikeli deneyler yerine önce modeller üzerinde çalışmaya olanak tanır.</li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Ekstra Not: Tasarım Odaklı Düşünce -->
-            <section class="bg-blue-900/50 border border-blue-400 rounded-xl shadow-2xl overflow-hidden">
-                <h2 class="bg-blue-800 p-4 md:p-5 text-xl md:text-2xl font-bold text-white">
-                    Ekstra Not: Tasarım Odaklı Düşünce Nedir?
+                    7. Modelleme Nedir? Bilimsel Modelleme Neden Önemlidir?
                 </h2>
                 <div class="p-5 md:p-6 text-gray-300 leading-relaxed">
-                    <p class="mb-4">Bu, sorunları çözmek için <strong>insanı merkeze alan</strong> bir yaklaşımdır. Mühendislik süreciyle çok ilgilidir. Adımları (PDF 2. Ünite):</p>
-                    <ol class="list-decimal list-outside space-y-2 pl-5">
-                        <li><strong>Empati Kurma</strong> (Kullanıcının ihtiyacını anlama)</li>
-                        <li><strong>Problemi Tanımlama</strong></li>
-                        <li><strong>Fikir Üretme</strong> (Beyin fırtınası)</li>
-                        <li><strong>Model Tasarlama</strong> (Prototip yapma)</li>
-                        <li><strong>Modeli Test Etme ve Geliştirme</strong></li>
-                    </ol>
+                    <p>
+                        Gönderdiğin bu "Proje Hazırlama" (03161450_PROJE_HAZIRLAMA.pdf) kitabında <strong>"Modelleme"</strong> konusu spesifik olarak işlenmemiştir.
+                    </p>
+                    <p class="mt-3">
+                        Bu kitabın odak noktası, bir bilimsel projenin fikir (problem) aşamasından, hipotez (denence) kurmaya, planlamaya, test etmeye (sınama) ve son olarak rapor yazıp sunmaya kadar olan süreçtir.
+                    </p>
                 </div>
             </section>
-
         </main>
         
         <!-- Footer -->
@@ -304,3 +233,4 @@
 
 </body>
 </html>
+
